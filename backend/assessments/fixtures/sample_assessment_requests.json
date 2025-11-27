@@ -1,0 +1,113 @@
+[
+  {
+    "model": "assessments.assessmentrequest",
+    "pk": 1,
+    "fields": {
+      "title": "Request for Trauma Assessment Tool",
+      "description": "We need a specialized assessment tool for trauma-related symptoms in adolescents. Current tools don't adequately address this age group's specific needs.",
+      "request_type": "new_assessment",
+      "justification": "Recent research shows that adolescent trauma responses differ significantly from adult patterns. A specialized tool would improve our diagnostic accuracy.",
+      "target_population": "Adolescents aged 13-17 with suspected trauma history",
+      "expected_outcomes": "Better identification of trauma symptoms, improved treatment planning, reduced misdiagnosis rates",
+      "requester": 1,
+      "status": "pending",
+      "priority": "high",
+      "admin_notes": "",
+      "reviewed_by": null,
+      "reviewed_at": null,
+      "created_at": "2024-01-15T10:30:00Z",
+      "updated_at": "2024-01-15T10:30:00Z"
+    }
+  },
+  {
+    "model": "assessments.assessmentrequest",
+    "pk": 2,
+    "fields": {
+      "title": "Modify GAD-7 for Youth Population",
+      "description": "Request to modify the existing GAD-7 assessment to be more appropriate for youth aged 13-18.",
+      "request_type": "modification",
+      "justification": "The current GAD-7 uses language and scenarios that don't resonate with younger clients. Age-appropriate modifications would improve engagement and accuracy.",
+      "target_population": "Youth aged 13-18 with anxiety concerns",
+      "expected_outcomes": "Increased assessment completion rates, better client understanding, more accurate anxiety measurement",
+      "requester": 1,
+      "status": "approved",
+      "priority": "medium",
+      "admin_notes": "Approved for development. Please work with clinical team on language modifications.",
+      "reviewed_by": 1,
+      "reviewed_at": "2024-01-10T14:20:00Z",
+      "created_at": "2024-01-08T09:15:00Z",
+      "updated_at": "2024-01-10T14:20:00Z"
+    }
+  },
+  {
+    "model": "assessments.assessmentrequest",
+    "pk": 3,
+    "fields": {
+      "title": "Social Anxiety Assessment for Students",
+      "description": "Request for a new assessment specifically designed to measure social anxiety in academic settings.",
+      "request_type": "new_assessment",
+      "justification": "Many students experience social anxiety specifically in school environments. A targeted assessment would help identify these issues more effectively.",
+      "target_population": "Students aged 14-22 experiencing social anxiety in academic settings",
+      "expected_outcomes": "Better identification of academic-related social anxiety, improved support strategies, enhanced student success rates",
+      "requester": 1,
+      "status": "rejected",
+      "priority": "low",
+      "admin_notes": "Similar functionality already exists in current social anxiety assessments. Consider using existing tools with additional context questions.",
+      "reviewed_by": 1,
+      "reviewed_at": "2024-01-12T11:45:00Z",
+      "created_at": "2024-01-05T16:20:00Z",
+      "updated_at": "2024-01-12T11:45:00Z"
+    }
+  },
+  {
+    "model": "assessments.clientassessmentassignment",
+    "pk": 1,
+    "fields": {
+      "guide": 1,
+      "client": 1,
+      "assessment_type": 1,
+      "assigned_date": "2024-01-16T08:00:00Z",
+      "due_date": "2024-01-23T23:59:59Z",
+      "priority": "high",
+      "notes": "Client has been showing signs of depression. Please complete this assessment before our next session.",
+      "is_completed": false,
+      "completed_date": null,
+      "created_at": "2024-01-16T08:00:00Z",
+      "updated_at": "2024-01-16T08:00:00Z"
+    }
+  },
+  {
+    "model": "assessments.clientassessmentassignment",
+    "pk": 2,
+    "fields": {
+      "guide": 1,
+      "client": 2,
+      "assessment_type": 2,
+      "assigned_date": "2024-01-14T10:30:00Z",
+      "due_date": "2024-01-21T23:59:59Z",
+      "priority": "medium",
+      "notes": "Follow-up assessment to track anxiety levels after starting new coping strategies.",
+      "is_completed": true,
+      "completed_date": "2024-01-18T15:20:00Z",
+      "created_at": "2024-01-14T10:30:00Z",
+      "updated_at": "2024-01-18T15:20:00Z"
+    }
+  },
+  {
+    "model": "assessments.clientassessmentassignment",
+    "pk": 3,
+    "fields": {
+      "guide": 1,
+      "client": 3,
+      "assessment_type": 1,
+      "assigned_date": "2024-01-12T14:15:00Z",
+      "due_date": null,
+      "priority": "low",
+      "notes": "Baseline assessment for new client. No rush, complete when comfortable.",
+      "is_completed": false,
+      "completed_date": null,
+      "created_at": "2024-01-12T14:15:00Z",
+      "updated_at": "2024-01-12T14:15:00Z"
+    }
+  }
+]

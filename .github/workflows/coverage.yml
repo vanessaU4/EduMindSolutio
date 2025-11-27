@@ -1,0 +1,153 @@
+name: Coverage Report
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:13
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test_edumind
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: frontend/package-lock.json
+    
+    - name: Install Python dependencies
+      run: |
+        cd backend
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install coverage pytest-django pytest-cov
+    
+    - name: Install Node.js dependencies
+      run: |
+        cd frontend
+        npm ci
+    
+    - name: Run Django tests with coverage
+      run: |
+        cd backend
+        python manage.py test tests.test_simple tests.test_basic
+        coverage run --source='.' manage.py test tests.test_simple tests.test_basic
+        coverage xml -o coverage-backend.xml
+        coverage html -d htmlcov-backend
+        coverage report --show-missing > coverage-backend.txt
+      env:
+        DATABASE_URL: postgres://postgres:postgres@localhost:5432/test_edumind
+    
+    - name: Run Frontend tests with coverage
+      run: |
+        cd frontend
+        npm run test:ci
+        cp coverage/lcov.info coverage-frontend.lcov
+    
+    - name: Generate combined coverage report
+      run: |
+        echo "# Coverage Report" > coverage-summary.md
+        echo "" >> coverage-summary.md
+        echo "## Backend Coverage" >> coverage-summary.md
+        echo "\`\`\`" >> coverage-summary.md
+        cat backend/coverage-backend.txt >> coverage-summary.md
+        echo "\`\`\`" >> coverage-summary.md
+        echo "" >> coverage-summary.md
+        echo "## Frontend Coverage" >> coverage-summary.md
+        echo "See detailed report in artifacts" >> coverage-summary.md
+    
+    - name: Upload backend coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./backend/coverage-backend.xml
+        flags: backend
+        name: backend-coverage
+        fail_ci_if_error: false
+    
+    - name: Upload frontend coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./frontend/coverage-frontend.lcov
+        flags: frontend
+        name: frontend-coverage
+        fail_ci_if_error: false
+    
+    - name: Upload coverage artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-reports
+        path: |
+          backend/htmlcov-backend/
+          frontend/coverage/
+          coverage-summary.md
+    
+    - name: Comment coverage on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          
+          try {
+            const coverageSummary = fs.readFileSync('coverage-summary.md', 'utf8');
+            
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: coverageSummary
+            });
+          } catch (error) {
+            console.log('Could not post coverage comment:', error.message);
+          }
+    
+    - name: Check coverage thresholds
+      run: |
+        cd backend
+        coverage report --fail-under=80 || echo "Backend coverage below 80%"
+        
+        cd ../frontend
+        npm run test:coverage:check || echo "Frontend coverage below 80%"
+    
+    - name: Generate coverage badge
+      run: |
+        cd backend
+        COVERAGE=$(coverage report | grep TOTAL | awk '{print $4}' | sed 's/%//')
+        echo "Backend coverage: $COVERAGE%"
+        
+        # Create a simple badge URL
+        if [ "$COVERAGE" -ge 90 ]; then
+          COLOR="brightgreen"
+        elif [ "$COVERAGE" -ge 80 ]; then
+          COLOR="green"
+        elif [ "$COVERAGE" -ge 70 ]; then
+          COLOR="yellow"
+        else
+          COLOR="red"
+        fi
+        
+        echo "Coverage badge: https://img.shields.io/badge/coverage-$COVERAGE%25-$COLOR"

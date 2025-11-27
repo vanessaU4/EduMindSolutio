@@ -1,0 +1,11 @@
+# Development and Testing Dependencies
+pytest==7.4.3
+pytest-django==4.7.0
+pytest-cov==4.1.0
+coverage==7.3.2
+safety==2.3.5
+bandit==1.7.5
+flake8==6.1.0
+radon==6.0.1
+mypy==1.7.1
+black==23.11.0

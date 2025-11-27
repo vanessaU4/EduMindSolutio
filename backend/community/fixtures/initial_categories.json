@@ -1,0 +1,62 @@
+[
+  {
+    "model": "community.forumcategory",
+    "pk": 1,
+    "fields": {
+      "name": "General Discussion",
+      "description": "General mental health discussions and support",
+      "icon": "MessageSquare",
+      "color": "#3B82F6",
+      "is_active": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "community.forumcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Anxiety & Stress",
+      "description": "Support and coping strategies for anxiety and stress",
+      "icon": "Heart",
+      "color": "#EF4444",
+      "is_active": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "community.forumcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Depression Support",
+      "description": "Community support for those dealing with depression",
+      "icon": "Users",
+      "color": "#8B5CF6",
+      "is_active": true,
+      "order": 3
+    }
+  },
+  {
+    "model": "community.forumcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Coping Strategies",
+      "description": "Share and learn healthy coping mechanisms",
+      "icon": "Shield",
+      "color": "#10B981",
+      "is_active": true,
+      "order": 4
+    }
+  },
+  {
+    "model": "community.forumcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Success Stories",
+      "description": "Share your recovery and success stories",
+      "icon": "TrendingUp",
+      "color": "#F59E0B",
+      "is_active": true,
+      "order": 5
+    }
+  }
+]

@@ -1,0 +1,31 @@
+# EduMindSolutions Healthcare Platform - Robots.txt
+# HIPAA-compliant web crawling restrictions
+
+User-agent: *
+# Allow public pages
+Allow: /
+Allow: /login
+Allow: /register
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /medical-disclaimer
+Allow: /crisis
+
+# Disallow protected healthcare areas
+Disallow: /dashboard
+Disallow: /assessments
+Disallow: /community
+Disallow: /wellness
+Disallow: /guide
+Disallow: /admin
+Disallow: /api
+Disallow: /test
+
+# Healthcare compliance - no caching of sensitive areas
+Disallow: /onboarding
+Disallow: /profile
+Disallow: /settings
+Disallow: /safety-plan
+
+# Sitemap location
+Sitemap: https://edumindsolutions.health/sitemap.xml

@@ -1,0 +1,728 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EduMindSolutions Healthcare Platform Design System v2.0 */
+/* Professional, modern, accessible, and HIPAA-compliant styling */
+/* Enhanced with advanced micro-interactions and premium aesthetics */
+
+@layer base {
+  :root {
+    /* She-Nations Primary Colors - Advanced Palette */
+    --shenations-purple-50: 270 100% 98%;
+    --shenations-purple-100: 269 100% 95%;
+    --shenations-purple-200: 269 100% 92%;
+    --shenations-purple-300: 268 100% 86%;
+    --shenations-purple-400: 270 95% 75%;
+    --shenations-purple-500: 271 91% 65%;
+    --shenations-purple-600: 271 81% 56%; /* Primary purple */
+    --shenations-purple-700: 262 83% 58%;
+    --shenations-purple-800: 263 69% 42%;
+    --shenations-purple-900: 263 69% 32%;
+    --shenations-purple-950: 264 100% 13%;
+
+    --shenations-pink-50: 327 73% 97%;
+    --shenations-pink-100: 325 78% 95%;
+    --shenations-pink-200: 326 85% 90%;
+    --shenations-pink-300: 327 87% 81%;
+    --shenations-pink-400: 328 86% 70%;
+    --shenations-pink-500: 330 81% 60%;
+    --shenations-pink-600: 333 71% 51%; /* Primary pink */
+    --shenations-pink-700: 335 78% 42%;
+    --shenations-pink-800: 336 74% 35%;
+    --shenations-pink-900: 336 69% 30%;
+    --shenations-pink-950: 336 84% 17%;
+
+    --shenations-indigo-50: 225 100% 97%;
+    --shenations-indigo-100: 226 100% 94%;
+    --shenations-indigo-200: 228 96% 89%;
+    --shenations-indigo-300: 230 94% 82%;
+    --shenations-indigo-400: 234 89% 74%;
+    --shenations-indigo-500: 239 84% 67%;
+    --shenations-indigo-600: 243 75% 59%; /* Primary indigo */
+    --shenations-indigo-700: 245 58% 51%;
+    --shenations-indigo-800: 244 55% 41%;
+    --shenations-indigo-900: 242 47% 34%;
+    --shenations-indigo-950: 244 47% 20%;
+
+    /* Professional Healthcare Colors - Premium Edition */
+    --healthcare-primary: 271 81% 56%; /* She-Nations purple */
+    --healthcare-primary-foreground: 0 0% 100%;
+    --healthcare-primary-hover: 271 81% 48%;
+    --healthcare-primary-active: 271 81% 40%;
+
+    --healthcare-secondary: 158 64% 52%; /* Calming green */
+    --healthcare-secondary-foreground: 0 0% 100%;
+    --healthcare-secondary-hover: 158 64% 44%;
+    --healthcare-secondary-active: 158 64% 36%;
+
+    --healthcare-accent: 333 71% 51%; /* She-Nations pink */
+    --healthcare-accent-foreground: 0 0% 100%;
+    --healthcare-accent-hover: 333 71% 43%;
+    --healthcare-accent-active: 333 71% 35%;
+
+    /* Professional Neutral Palette */
+    --neutral-50: 210 20% 98%;
+    --neutral-100: 220 14.3% 95.9%;
+    --neutral-200: 220 13% 91%;
+    --neutral-300: 216 12.2% 83.9%;
+    --neutral-400: 218 10.6% 64.9%;
+    --neutral-500: 220 8.9% 46.1%;
+    --neutral-600: 215 13.8% 34.1%;
+    --neutral-700: 217 19.1% 26.7%;
+    --neutral-800: 215 27.9% 16.9%;
+    --neutral-900: 221 39.3% 11%;
+    --neutral-950: 224 71.4% 4.1%;
+
+    /* Background and Surface Colors - She-Nations Inspired */
+    --background: 270 100% 98%; /* She-Nations light purple background */
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%; /* Pure white for cards */
+    --card-foreground: 222.2 84% 4.9%;
+
+    --surface: 0 0% 100%;
+    --surface-foreground: 222.2 84% 4.9%;
+
+    /* She-Nations Gradient Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--shenations-purple-600)) 0%, hsl(var(--shenations-pink-600)) 50%, hsl(var(--shenations-indigo-600)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--shenations-purple-50)) 0%, hsl(var(--shenations-pink-50)) 50%, hsl(var(--shenations-indigo-50)) 100%);
+    --gradient-cta: linear-gradient(90deg, hsl(var(--shenations-purple-600)) 0%, hsl(var(--shenations-pink-600)) 50%, hsl(var(--shenations-indigo-600)) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.3) 100%);
+
+    /* Interactive Elements - She-Nations Theme */
+    --primary: 271 81% 56%; /* She-Nations purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* Status and Feedback Colors */
+    --success: 142 76% 36%; /* Success green #16a34a */
+    --success-foreground: 0 0% 100%;
+
+    --warning: 32 95% 44%; /* Warning orange #d97706 */
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%; /* Error red #dc2626 */
+    --destructive-foreground: 0 0% 100%;
+
+    --info: 188 95% 37%; /* Info cyan #0891b2 */
+    --info-foreground: 0 0% 100%;
+
+    /* Mental Health Mood Colors */
+    --mood-very-low: 0 84% 60%; /* Red */
+    --mood-low: 25 95% 53%; /* Orange */
+    --mood-neutral: 45 93% 47%; /* Yellow */
+    --mood-good: 142 76% 36%; /* Green */
+    --mood-very-good: 214 100% 59%; /* Blue */
+
+    /* Risk Level Colors */
+    --risk-minimal: 142 76% 36%; /* Green */
+    --risk-mild: 45 93% 47%; /* Amber */
+    --risk-moderate: 25 95% 53%; /* Orange */
+    --risk-severe: 0 84% 60%; /* Red */
+    --risk-critical: 0 63% 31%; /* Dark red */
+
+    /* UI Elements */
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 214 100% 59%; /* Healthcare blue focus ring */
+
+    /* Accessibility */
+    --focus-ring: 214 100% 59%; /* Healthcare blue focus ring */
+    --focus-ring-opacity: 0.2; /* Focus ring opacity */
+    --high-contrast: 0 0% 0%;
+    --high-contrast-bg: 0 0% 100%;
+
+    /* Layout */
+    --radius: 0.5rem;
+    --header-height: 4rem;
+    --sidebar-width: 16rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 214 100% 59%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 214 100% 59%;
+  }
+
+  .dark {
+    /* Dark mode for healthcare platform - reduced eye strain for night use */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --surface: 222.2 84% 4.9%;
+    --surface-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 214 100% 70%; /* Lighter blue for dark mode */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 214 100% 70%;
+
+    /* Dark mode sidebar */
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 214 100% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 214 100% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Healthcare-specific typography */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+
+  /* Accessibility improvements */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --foreground: var(--high-contrast);
+      --background: var(--high-contrast-bg);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Professional UI Components v2.0 - Enhanced */
+  
+  /* Premium Button System */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold text-sm rounded-xl;
+    @apply bg-gradient-to-r from-shenations-purple-600 via-shenations-pink-600 to-shenations-indigo-600;
+    @apply text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    @apply transition-all duration-300 ease-out focus:ring-4 focus:ring-shenations-purple-500/30;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold text-sm rounded-xl;
+    @apply bg-white border-2 border-shenations-purple-200 text-shenations-purple-700;
+    @apply hover:bg-shenations-purple-50 hover:border-shenations-purple-300 hover:shadow-md;
+    @apply transform hover:-translate-y-0.5 transition-all duration-300 ease-out;
+    @apply focus:ring-4 focus:ring-shenations-purple-500/30;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium text-sm rounded-xl;
+    @apply text-neutral-600 hover:text-shenations-purple-700 hover:bg-shenations-purple-50;
+    @apply transition-all duration-200 ease-out focus:ring-2 focus:ring-shenations-purple-500/30;
+  }
+  
+  /* Premium Card System */
+  .card-premium {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 rounded-2xl;
+    @apply shadow-xl shadow-shenations-purple-500/10 hover:shadow-2xl hover:shadow-shenations-purple-500/20;
+    @apply transform hover:-translate-y-1 transition-all duration-500 ease-out;
+    @apply p-8 relative overflow-hidden;
+  }
+  
+  .card-premium::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-shenations-purple-500/5;
+    @apply pointer-events-none;
+  }
+  
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl;
+    @apply shadow-2xl shadow-black/10 p-8 relative overflow-hidden;
+  }
+  
+  /* Enhanced Input System */
+  .input-premium {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-neutral-200;
+    @apply bg-white/80 backdrop-blur-sm text-neutral-900 placeholder-neutral-500;
+    @apply focus:border-shenations-purple-500 focus:ring-4 focus:ring-shenations-purple-500/20;
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .input-premium:focus {
+    @apply shadow-lg shadow-shenations-purple-500/10;
+  }
+  
+  /* Professional Navigation */
+  .nav-item {
+    @apply flex items-center px-4 py-3 rounded-xl font-medium text-sm;
+    @apply text-neutral-600 hover:text-shenations-purple-700 hover:bg-shenations-purple-50;
+    @apply transition-all duration-200 ease-out relative;
+  }
+  
+  .nav-item.active {
+    @apply text-shenations-purple-700 bg-gradient-to-r from-shenations-purple-50 to-shenations-pink-50;
+    @apply shadow-md border-l-4 border-shenations-purple-500;
+  }
+  
+  /* Premium Badge System */
+  .badge-premium {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    @apply bg-gradient-to-r from-shenations-purple-100 to-shenations-pink-100;
+    @apply text-shenations-purple-800 border border-shenations-purple-200;
+  }
+  
+  .badge-success {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    @apply bg-green-100 text-green-800 border border-green-200;
+  }
+  
+  .badge-warning {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    @apply bg-amber-100 text-amber-800 border border-amber-200;
+  }
+  
+  .badge-danger {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+    @apply bg-red-100 text-red-800 border border-red-200;
+  }
+  
+  /* She-Nations Advanced Component Classes */
+  .shenations-gradient-text {
+    @apply bg-gradient-to-r from-shenations-purple-600 via-shenations-pink-600 to-shenations-indigo-600 bg-clip-text text-transparent;
+  }
+
+  .shenations-gradient-bg {
+    background: var(--gradient-primary);
+  }
+
+  .shenations-hero-bg {
+    background: var(--gradient-hero);
+  }
+
+  .shenations-cta-bg {
+    background: var(--gradient-cta);
+  }
+
+  .shenations-glass-effect {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+    background: var(--gradient-card);
+  }
+
+  .shenations-hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+
+  .shenations-card {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50 rounded-3xl p-8 hover:bg-white/90 transition-all duration-500;
+    @apply shadow-2xl shadow-shenations-purple-500/10 hover:shadow-2xl hover:shadow-shenations-purple-500/20;
+    @apply hover:-translate-y-2 relative overflow-hidden;
+  }
+  
+  .shenations-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-shenations-purple-500/5;
+    @apply pointer-events-none;
+  }
+
+  .shenations-button-primary {
+    @apply inline-flex items-center px-8 py-4 font-semibold rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-500;
+    background: var(--gradient-primary);
+    @apply text-white shadow-xl shadow-shenations-purple-500/25;
+  }
+  
+  .shenations-button-primary:hover {
+    @apply shadow-2xl shadow-shenations-purple-500/40 -translate-y-1;
+  }
+
+  .shenations-button-secondary {
+    @apply inline-flex items-center px-8 py-4 bg-white/50 backdrop-blur-sm border border-white/50 text-gray-700 font-semibold rounded-full hover:bg-white/70 transition-all duration-300;
+  }
+
+  .shenations-badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full bg-white/30 backdrop-blur-sm border border-white/50;
+  }
+
+  /* Healthcare-specific component classes - Updated with She-Nations theme */
+  .healthcare-card {
+    @apply bg-card border border-border rounded-lg shadow-sm p-6;
+  }
+
+  .healthcare-button-primary {
+    @apply px-4 py-2 rounded-md font-medium transition-colors text-white focus:ring-2 focus:ring-offset-2;
+    background: hsl(var(--shenations-purple-600));
+    @apply hover:opacity-90 focus:ring-shenations-purple-500;
+  }
+
+  .healthcare-button-secondary {
+    @apply px-4 py-2 rounded-md font-medium transition-colors text-white focus:ring-2 focus:ring-offset-2;
+    background: hsl(var(--shenations-pink-600));
+    @apply hover:opacity-90 focus:ring-shenations-pink-500;
+  }
+
+  .crisis-button {
+    @apply bg-destructive text-destructive-foreground hover:bg-destructive/90
+           focus:ring-2 focus:ring-destructive focus:ring-offset-2
+           px-6 py-3 rounded-lg font-semibold text-lg shadow-lg
+           transition-all duration-200 transform hover:scale-105;
+  }
+
+  /* Risk level indicators */
+  .risk-minimal {
+    @apply bg-green-100 text-green-800 border-green-200;
+  }
+
+  .risk-mild {
+    @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+  }
+
+  .risk-moderate {
+    @apply bg-orange-100 text-orange-800 border-orange-200;
+  }
+
+  .risk-severe {
+    @apply bg-red-100 text-red-800 border-red-200;
+  }
+
+  .risk-critical {
+    @apply bg-red-200 text-red-900 border-red-300;
+  }
+
+  /* Mood indicators */
+  .mood-very-low {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .mood-low {
+    @apply bg-orange-100 text-orange-800;
+  }
+
+  .mood-neutral {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+
+  .mood-good {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .mood-very-good {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  /* Medical disclaimer styling */
+  .medical-disclaimer {
+    @apply bg-yellow-50 border-l-4 border-yellow-400 p-4 text-sm text-yellow-800;
+  }
+
+  /* HIPAA compliance indicator */
+  .hipaa-compliant {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+           bg-green-100 text-green-800 border border-green-200;
+  }
+
+  /* Accessibility helpers */
+  .sr-only {
+    @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  }
+
+  .skip-link {
+    @apply absolute -top-10 left-6 bg-blue-600 text-white
+           px-4 py-2 rounded-md z-50 focus:top-6 transition-all;
+  }
+}
+
+@layer utilities {
+  /* She-Nations Advanced Color Utilities */
+  .text-shenations-purple {
+    color: hsl(var(--shenations-purple-600));
+  }
+
+  .text-shenations-pink {
+    color: hsl(var(--shenations-pink-600));
+  }
+
+  .text-shenations-indigo {
+    color: hsl(var(--shenations-indigo-600));
+  }
+
+  .bg-shenations-purple {
+    background-color: hsl(var(--shenations-purple-600));
+  }
+
+  .bg-shenations-pink {
+    background-color: hsl(var(--shenations-pink-600));
+  }
+
+  .bg-shenations-indigo {
+    background-color: hsl(var(--shenations-indigo-600));
+  }
+
+  .border-shenations-purple {
+    border-color: hsl(var(--shenations-purple-600));
+  }
+
+  .border-shenations-pink {
+    border-color: hsl(var(--shenations-pink-600));
+  }
+
+  .border-shenations-indigo {
+    border-color: hsl(var(--shenations-indigo-600));
+  }
+
+  /* Healthcare-specific utilities - Updated */
+  .text-healthcare-primary {
+    color: hsl(var(--healthcare-primary));
+  }
+
+  .text-healthcare-secondary {
+    color: hsl(var(--healthcare-secondary));
+  }
+
+  .bg-healthcare-bg {
+    background-color: hsl(var(--background));
+  }
+
+  .border-healthcare {
+    border-color: hsl(var(--healthcare-primary));
+  }
+
+  /* Professional Animation System v2.0 */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-gradient {
+    animation: gradientShift 8s ease-in-out infinite;
+    background-size: 400% 400%;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounceSubtle 2s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Enhanced Keyframe Animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px) scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  @keyframes fadeInDown {
+    from { 
+      opacity: 0; 
+      transform: translateY(-30px) scale(0.95); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+    }
+  }
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0; 
+      transform: scale(0.8); 
+    }
+    to { 
+      opacity: 1; 
+      transform: scale(1); 
+    }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(100%); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes slideDown {
+    from { 
+      opacity: 0; 
+      transform: translateY(-100%); 
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.3);
+    }
+    to {
+      box-shadow: 0 0 40px rgba(219, 39, 119, 0.6), 0 0 60px rgba(79, 70, 229, 0.4);
+    }
+  }
+
+  @keyframes bounceSubtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+
+  /* Advanced auth form animations */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Glass morphism effects */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* Enhanced focus states for accessibility */
+  .enhanced-focus:focus-visible {
+    outline: 2px solid hsl(var(--healthcare-primary));
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  }
+}

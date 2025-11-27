@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Healthcare heart icon with professional blue background -->
+  <rect width="32" height="32" rx="6" fill="#2563eb"/>
+  
+  <!-- Heart shape for mental health -->
+  <path d="M16 26.5c-0.5 0-1-0.2-1.4-0.6l-7.1-7.1c-2.3-2.3-2.3-6.1 0-8.4 1.1-1.1 2.6-1.7 4.2-1.7s3.1 0.6 4.2 1.7l0.1 0.1 0.1-0.1c1.1-1.1 2.6-1.7 4.2-1.7s3.1 0.6 4.2 1.7c2.3 2.3 2.3 6.1 0 8.4l-7.1 7.1c-0.4 0.4-0.9 0.6-1.4 0.6z" fill="white"/>
+  
+  <!-- Small plus sign for healthcare -->
+  <rect x="15" y="11" width="2" height="6" fill="#2563eb"/>
+  <rect x="12" y="14" width="8" height="2" fill="#2563eb"/>
+</svg>

@@ -1,0 +1,80 @@
+[
+  {
+    "model": "assessments.assessmenttype",
+    "pk": 1,
+    "fields": {
+      "name": "PHQ9",
+      "display_name": "Patient Health Questionnaire-9",
+      "description": "A 9-question instrument for screening, diagnosing, monitoring and measuring the severity of depression.",
+      "instructions": "Over the last 2 weeks, how often have you been bothered by any of the following problems?",
+      "total_questions": 9,
+      "max_score": 27,
+      "is_active": true,
+      "created_at": "2024-01-01T10:00:00Z",
+      "updated_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "assessments.assessmenttype",
+    "pk": 2,
+    "fields": {
+      "name": "GAD7",
+      "display_name": "Generalized Anxiety Disorder 7-item",
+      "description": "A 7-question screening tool for generalized anxiety disorder.",
+      "instructions": "Over the last 2 weeks, how often have you been bothered by the following problems?",
+      "total_questions": 7,
+      "max_score": 21,
+      "is_active": true,
+      "created_at": "2024-01-01T10:00:00Z",
+      "updated_at": "2024-01-01T10:00:00Z"
+    }
+  },
+  {
+    "model": "assessments.assessmentquestion",
+    "pk": 1,
+    "fields": {
+      "assessment_type": 1,
+      "question_number": 1,
+      "question_text": "Little interest or pleasure in doing things",
+      "options": [
+        {"text": "Not at all", "score": 0},
+        {"text": "Several days", "score": 1},
+        {"text": "More than half the days", "score": 2},
+        {"text": "Nearly every day", "score": 3}
+      ],
+      "is_reverse_scored": false
+    }
+  },
+  {
+    "model": "assessments.assessmentquestion",
+    "pk": 2,
+    "fields": {
+      "assessment_type": 1,
+      "question_number": 2,
+      "question_text": "Feeling down, depressed, or hopeless",
+      "options": [
+        {"text": "Not at all", "score": 0},
+        {"text": "Several days", "score": 1},
+        {"text": "More than half the days", "score": 2},
+        {"text": "Nearly every day", "score": 3}
+      ],
+      "is_reverse_scored": false
+    }
+  },
+  {
+    "model": "assessments.assessmentquestion",
+    "pk": 3,
+    "fields": {
+      "assessment_type": 2,
+      "question_number": 1,
+      "question_text": "Feeling nervous, anxious, or on edge",
+      "options": [
+        {"text": "Not at all", "score": 0},
+        {"text": "Several days", "score": 1},
+        {"text": "More than half the days", "score": 2},
+        {"text": "Nearly every day", "score": 3}
+      ],
+      "is_reverse_scored": false
+    }
+  }
+]
