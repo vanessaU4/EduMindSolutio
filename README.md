@@ -5,6 +5,82 @@
 ![Security](https://img.shields.io/badge/security-passing-brightgreen)
 ![Maintenance](https://img.shields.io/badge/maintenance-active-brightgreen)
 
+## 🌟 Overview
+
+EduMindSolutions is a comprehensive mental health platform designed specifically for youth aged 13-23. The platform provides clinical assessments, peer support, crisis intervention services, and educational resources to support young people's mental health journey.
+
+## LINK TO THE DEPLOYED APP
+
+https://edu-mind-solutions.vercel.app/
+
+## Key Features
+
+🏥 Clinical Assessments - Professional mental health evaluations and tracking
+👥 Peer Support Community - Safe spaces for peer-to-peer support and forums
+🚨 Crisis Intervention - 24/7 crisis support and emergency resources
+📚 Educational Content - Mental health resources, articles, and multimedia content
+🔒 HIPAA Compliant - Secure, privacy-focused healthcare platform
+📱 Responsive Design - Works seamlessly across all devices
+🎯 Role-Based Access - Different interfaces for patients and healthcare professionals
+
+## 🏗️ System Architecture
+
+Backend (Django REST API)
+Framework: Django 5.1.7 + Django REST Framework
+Authentication: JWT (JSON Web Tokens)
+Database: SQLite (development) / PostgreSQL (production)
+Security: HIPAA-compliant data handling and encryption
+Frontend (React TypeScript)
+Framework: React 18.3.1 with TypeScript
+Build Tool: Vite 7.0.4
+UI Library: Radix UI + Tailwind CSS
+State Management: Redux Toolkit + React Query
+Routing: React Router DOM
+
+## 🚀 Quick Start
+
+Prerequisites
+Python 3.11+
+Node.js 18+
+Git
+
+## Backend Setup
+# Clone the repository
+git clone <repository-url>
+cd eduMindSolutions/backend
+
+# Create virtual environment
+python -m venv env
+
+# Activate virtual environment
+# Windows:
+env\Scripts\activate
+# Linux/Mac:
+source env/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py migrate
+
+# Create superuser (optional)
+python manage.py createsuperuser
+
+# Start development server
+python manage.py runserver
+
+## Frontend Setup
+
+# Navigate to frontend directory
+cd ../frontend
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
 ## 🚀 Automated CI/CD Features
 
 When you push to GitHub, the following automated processes will run:
