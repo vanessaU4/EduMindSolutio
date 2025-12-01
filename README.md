@@ -45,40 +45,40 @@ Node.js 18+
 Git
 
 ## Backend Setup
-# Clone the repository
+### Clone the repository
 git clone <repository-url>
 cd eduMindSolutions/backend
 
-# Create virtual environment
+### Create virtual environment
 python -m venv env
 
-# Activate virtual environment
-# Windows:
+### Activate virtual environment
+### Windows:
 env\Scripts\activate
-# Linux/Mac:
+### Linux/Mac:
 source env/bin/activate
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 
-# Run migrations
+### Run migrations
 python manage.py migrate
 
-# Create superuser (optional)
+### Create superuser (optional)
 python manage.py createsuperuser
 
-# Start development server
+### Start development server
 python manage.py runserver
 
 ## Frontend Setup
 
-# Navigate to frontend directory
+### Navigate to frontend directory
 cd ../frontend
 
-# Install dependencies
+### Install dependencies
 npm install
 
-# Start development server
+### Start development server
 npm run dev
 
 ## 🚀 Automated CI/CD Features
