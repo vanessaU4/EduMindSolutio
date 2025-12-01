@@ -1,15 +1,15 @@
 
 # 🔧 Maintenance Grade Report
 
-**Overall Grade: B+ (84%)**
+**Overall Grade: B- (74%)**
 
 ## Individual Scores
 
 
-### Dependency Updates - A-
-- **Score**: 90% (Weight: 25%)
-- **Weighted Score**: 23%
-- **Details**: Dependencies check completed
+### Dependency Updates - D
+- **Score**: 50% (Weight: 25%)
+- **Weighted Score**: 13%
+- **Details**: 15 critical updates required
 
 ### Security Vulnerabilities - B+
 - **Score**: 85% (Weight: 35%)
@@ -39,4 +39,4 @@
 ## Recommendations
 ⚠️ Good but needs attention to some areas.
 
-Generated: 2025-11-19T12:22:05.198Z
+Generated: 2025-12-01T22:14:52.673Z
