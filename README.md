@@ -72,30 +72,14 @@ python manage.py runserver
 
 ## Frontend Setup
 
-# Clone the repository
-git clone <repository-url>
-cd eduMindSolutions/backend
+### Navigate to frontend directory
+cd ../frontend
 
-# Create virtual environment
-python -m venv env
+### Install dependencies
+npm install
 
-# Activate virtual environment
-# Windows:
-env\Scripts\activate
-# Linux/Mac:
-source env/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run migrations
-python manage.py migrate
-
-# Create superuser (optional)
-python manage.py createsuperuser
-
-# Start development server
-python manage.py runserver
+### Start development server
+npm run dev
 
 ## 🚀 Automated CI/CD Features
 
