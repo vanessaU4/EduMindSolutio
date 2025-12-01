@@ -72,15 +72,14 @@ python manage.py runserver
 
 ## Frontend Setup
 
-### Navigate to frontend directory
+ # Navigate to frontend directory
 cd ../frontend
 
-### Install dependencies
+# Install dependencies
 npm install
 
-### Start development server
+# Start development server
 npm run dev
-
 ## 🚀 Automated CI/CD Features
 
 When you push to GitHub, the following automated processes will run:
