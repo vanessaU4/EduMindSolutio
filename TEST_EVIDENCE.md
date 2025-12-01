@@ -2,7 +2,7 @@
 ## EduMindSolutions Healthcare Platform
 
 **Document Version:** 1.0  
-**Last Updated:** 2024  
+**Last Updated:** 2025
 **Project:** EduMindSolutions Healthcare Platform  
 **Testing Framework:** Django TestCase, pytest, unittest  
 
@@ -1130,13 +1130,13 @@ Password: TestPass456!
 
 | Role | Name | Date | Signature |
 |------|------|------|-----------|
-| QA Lead | - | 2024 | - |
-| Development Lead | - | 2024 | - |
-| Project Manager | - | 2024 | - |
+| QA Lead | - | 2025 | - |
+| Development Lead | - | 2025 | - |
+| Project Manager | - | 2025 | - |
 
 ---
 
 **Document Status**: APPROVED ✅  
-**Last Review Date**: 2024  
-**Next Review Date**: 2024 (Quarterly)
+**Last Review Date**: 2025 
+**Next Review Date**: 2025 (Quarterly)
 
