@@ -286,8 +286,8 @@ VITE_ANALYTICS_ID=your-analytics-id
 
 **If you or someone you know is in crisis, please contact:**
 
-- **National Suicide Prevention Lifeline**: 988
-- **Crisis Text Line**: Text HOME to 741741
-- **Emergency Services**: 911
+- **National Suicide Prevention Lifeline**: 8015
+- **Crisis Text Line**: Text HOME to 114
+- **Emergency Services**: 112
 
 The platform includes built-in crisis intervention tools and direct connections to professional support services.
