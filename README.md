@@ -7,7 +7,8 @@
 
 ## 🌟 Overview
 
-EduMindSolutions is a comprehensive mental health platform designed specifically for youth aged 13-23. The platform provides clinical assessments, peer support, crisis intervention services, and educational resources to support young people's mental health journey.
+EduMindSolutions is a comprehensive mental health platform designed for young people in Rwanda specifically for the youth aged 13-23.To raise mental health awareness, reduce stigma, and promotes access to support services, thereby reducing stigma and increasing help-seeking behavior. The platform provides clinical assessments, peer support, crisis intervention services, and educational resources to support young people's mental health journey.
+
 ## LINK TO THE DEPLOYED APP:
 
 https://edu-mind-solutions.vercel.app/
