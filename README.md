@@ -104,3 +104,190 @@ npm run dev
 - **Backend API**: http://localhost:8000/api
 - **Admin Panel**: http://localhost:8000/admin
 
+## 📋 API Documentation
+
+### Authentication Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/accounts/register/` | User registration |
+| POST | `/api/accounts/login/` | User login |
+| POST | `/api/accounts/token/refresh/` | Refresh JWT token |
+| GET | `/api/accounts/users/` | List users |
+
+### Assessment Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/assessments/reviews/` | List assessments/reviews |
+| POST | `/api/assessments/reviews/` | Create new assessment |
+| GET | `/api/assessments/reviews/stats/` | Assessment statistics |
+| GET | `/api/assessments/my-reviews/` | User's assessments |
+
+### Community Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/community/categories/` | Forum categories |
+| GET | `/api/community/posts/` | Forum posts |
+| POST | `/api/community/posts/` | Create forum post |
+| GET | `/api/community/chatrooms/` | Chat rooms |
+| GET | `/api/community/peer-support/` | Peer support requests |
+
+### Content Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/content/audio/` | Audio content (meditations, etc.) |
+| GET | `/api/content/categories/` | Content categories |
+| GET | `/api/content/mental-health-resources/` | Mental health resources |
+
+### Crisis Endpoints
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/crisis/hotlines/` | Crisis hotlines |
+| GET | `/api/crisis/resources/` | Emergency resources |
+
+### Health Monitoring
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/health/` | Basic health check |
+| GET | `/health/detailed/` | Detailed system status |
+
+## 🔐 Authentication & Security
+
+### User Roles
+
+- **Patient**: Youth users (13-23) seeking mental health support
+- **Professional**: Licensed healthcare providers and counselors
+- **Admin**: System administrators
+
+### Security Features
+
+- JWT-based authentication with refresh tokens
+- Role-based access control (RBAC)
+- HIPAA-compliant data encryption
+- Secure session management
+- Input validation and sanitization
+- CORS protection
+
+### Token Usage
+
+```javascript
+// Include JWT token in API requests
+headers: {
+  'Authorization': 'Bearer ' + accessToken,
+  'Content-Type': 'application/json'
+}
+```
+
+## 🎨 Frontend Features
+
+### User Interface
+
+- **Modern Design**: Clean, accessible interface built with Radix UI
+- **Dark/Light Mode**: Theme switching for user preference
+- **Responsive Layout**: Mobile-first design approach
+- **Accessibility**: WCAG 2.1 AA compliant
+
+### Key Components
+
+- **Dashboard**: Personalized user dashboard with health metrics
+- **Assessment Tools**: Interactive mental health assessments
+- **Community Forums**: Peer support and discussion spaces
+- **Crisis Support**: Quick access to emergency resources
+- **Resource Library**: Educational content and tools
+
+### State Management
+
+```typescript
+// Redux store structure
+interface RootState {
+  auth: AuthState;
+  assessments: AssessmentState;
+  community: CommunityState;
+  content: ContentState;
+  wellness: WellnessState;
+}
+```
+`
+
+## 🐳 Docker Deployment
+
+### Development
+
+```bash
+# Start all services
+docker-compose up --build
+
+# Access services
+# Frontend: http://localhost:3000
+# Backend: http://localhost:8000
+# Database: localhost:5432
+```
+
+### Production
+
+```bash
+# Build production images
+docker-compose -f docker-compose.prod.yml up --build -d
+
+# View logs
+docker-compose logs -f
+```
+
+## 📊 Monitoring & Analytics
+
+### Health Checks
+
+The platform includes comprehensive health monitoring:
+
+```bash
+# Check system health
+curl http://localhost:8000/health/
+
+# Detailed health report
+curl http://localhost:8000/health/detailed/
+```
+
+### Metrics Tracked
+
+- User engagement and session duration
+- Assessment completion rates
+- Community participation metrics
+- Crisis intervention response times
+- System performance and uptime
+
+## 🔧 Configuration
+
+### Environment Variables
+
+#### Backend (.env)
+
+
+
+
+```bash
+# API configuration
+VITE_API_BASE_URL=http://localhost:8000/api
+
+
+# Feature flags
+VITE_ENABLE_CRISIS_CHAT=true
+VITE_ENABLE_PEER_MATCHING=true
+
+# Analytics
+VITE_ANALYTICS_ID=your-analytics-id
+```
+
+## 🆘 Crisis Support
+
+**If you or someone you know is in crisis, please contact:**
+
+- **National Suicide Prevention Lifeline**: 988
+- **Crisis Text Line**: Text HOME to 741741
+- **Emergency Services**: 911
+
+The platform includes built-in crisis intervention tools and direct connections to professional support services.
